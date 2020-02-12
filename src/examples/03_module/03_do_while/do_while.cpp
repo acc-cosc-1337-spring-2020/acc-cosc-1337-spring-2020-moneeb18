@@ -1,5 +1,7 @@
 #include "do_while.h"
-
+#include "while.h"
+#include <iostream>
+using std::cout; using std::cin;
 //Write code for void function prompt_user to loop until
 //user opts not to continue.  
 
@@ -11,3 +13,19 @@ folder.
 
 */
 
+void prompt_user()
+{
+	int choice;
+
+	do
+	{
+		int num;
+		cout << "Enter number: ";
+		cin >> num;
+		cout << sum_of_squares(num) << "\n\n";
+		cout << "Continue: ";
+		cin >> choice;
+	} while (choice==1);
+
+	
+}
