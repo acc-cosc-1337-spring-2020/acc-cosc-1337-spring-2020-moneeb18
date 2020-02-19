@@ -10,3 +10,5 @@ void loop_string_w_index(const std::string & str);
 
 void loop_string_w_auto(const std::string & str);
 
+void loop_string_w_auto_value(const std::string&str);
+void loop_string_w_auto_ref(const std::string&str);
