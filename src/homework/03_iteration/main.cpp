@@ -1,5 +1,5 @@
 //write include statements
-
+#include "dna.h"
 //write using statements
 
 
