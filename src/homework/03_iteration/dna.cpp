@@ -9,25 +9,20 @@ Return quotient.
 */
 double get_gc_content(const string & dna)
 {
-	int gc_counter = 0;
-	int letter_counter = 0;
+	double gc_counter = 0;
+	
 	for (int i = 0; i < dna.length(); i++)
 	{
 		if (dna[i] == 'C' || dna[i] == 'G')
 		{
 			gc_counter++;
 		}
-		else 
-		{
-			letter_counter++;
-		}
 	}
 
-	int sum = (gc_counter / letter_counter) * 100;
+	double gc_content = gc_counter / dna.length();
 
 
-
-	return sum;
+	return gc_content;
 }
 
 
@@ -38,11 +33,10 @@ accepts a string parameter and returns a string reversed.
 */
 string get_reverse_string(string dna)
 {
-	string s;
-	string rev;
-	for (int i = s.size();i >= 0;i--)
-		rev += s[i];
-	return string();
+	string rev = "";
+	for (int i = dna.size();i >= 0;i--)
+		rev += dna[i];
+	return rev;
 }
 
 

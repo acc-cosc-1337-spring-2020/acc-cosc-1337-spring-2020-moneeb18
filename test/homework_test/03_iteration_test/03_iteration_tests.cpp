@@ -9,7 +9,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 TEST_CASE("get_gc_constant") {
 	
 	REQUIRE(get_gc_content("AGCTATAG") == .375);
-	REQUIRE(get_gc_content("CGCTATANG") == .50);
+	REQUIRE(get_gc_content("CGCTATAG") == .50);
 }
 
 TEST_CASE("get_reversed_string") {
