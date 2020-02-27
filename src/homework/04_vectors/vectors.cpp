@@ -21,13 +21,13 @@ int get_max_from_vector(const std::vector<int>& numbers)
 
 return max;
 }
-int main(){
+int main() {
 	std::vector<int>arr = {};
 	int m = max(arr);
 	std::cout << m << std::endl;
+}
 
-
-/*
+	/*
 Write a function named is_prime with an integer parameter that
 given a number returns true if prime or false if not prime
 
@@ -42,7 +42,7 @@ given a number returns true if prime or false if not prime
 		i = 2;
 		while (i < n) {
 			if (n%i == 0) {
-				n = true;
+				n = false;
 			}
 			else {
 				n = true;
@@ -71,9 +71,11 @@ number is prime.
 
 	int vector_of_primes(int number)
 	{
-		int i;
-		while(i<number&& number%i != 0){
-			cout << i;
+		int i,
+		bool is_prime(int number);
+		if (is_prime == true) {
+		
+		}
 
 		return 0;
 	}
