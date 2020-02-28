@@ -1,4 +1,6 @@
 #include "vectors.h"
+using namespace std;
+#include <iostream>
 /*
 Write a value return function get_max_from_vector with a const reference
 vector of intsparameter that returns the max value in a vector
@@ -71,10 +73,11 @@ number is prime.
 
 	int vector_of_primes(int number)
 	{
-		int i,
+		int x,
 		bool is_prime(int number);
-		if (is_prime == true) {
-		
+		x = number % i;
+		while (x < number) {
+			cout << x;
 		}
 
 		return 0;
