@@ -10,25 +10,18 @@ vector of intsparameter that returns the max value in a vector
 */
 int get_max_from_vector(const std::vector<int>& numbers)
 {
-	int max;
-	for size_t 1 = 0; i < numbers.size(); i++){
-	if (i == 0) {
-		max = numbers[0];
-	}
-	else {
-		if (numbers[i] > max) {
+	int max{ numbers[0] };
+	for (size_t i = 0; i < numbers.size(); i++)
+	{
+		if (numbers[i] > max)
+		{
 			max = numbers[i];
 		}
+
 	}
+	return max;
 
-return max;
 }
-int main() {
-	std::vector<int>arr = {};
-	int m = max(arr);
-	std::cout << m << std::endl;
-}
-
 	/*
 Write a function named is_prime with an integer parameter that
 given a number returns true if prime or false if not prime
@@ -38,21 +31,19 @@ given a number returns true if prime or false if not prime
 */
 	bool is_prime(int number)
 	{
-		int n,
-			n = number;
+		bool n = true;
 		int i;
 		i = 2;
-		while (i < n) {
-			if (n%i == 0) {
+		while (i < number) {
+			if (number%i == 0) {
 				n = false;
-			}
-			else {
-				n = true;
+				return n;
 			}
 
-
-			return false;
+			i++;
 		}
+		return n;
+
 	}
 
 	
@@ -71,15 +62,18 @@ Make sure to use the is_prime function to determine if current
 number is prime.
 */
 
-	int vector_of_primes(int number)
+	vector<int> vector_of_primes(int number)
 	{
-		int x,
-		bool is_prime(int number);
-		x = number % i;
-		while (x < number) {
-			cout << x;
+		int i;
+		vector<int> primes;
+
+		for (i = 2; i < number; i++)
+		{
+			if (is_prime(i))
+
+				primes.push_back(i);
 		}
 
-		return 0;
+		return primes;
 	}
 
