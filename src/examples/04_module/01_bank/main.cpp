@@ -4,7 +4,9 @@ using std::cout;using std::cin;
 int main()
 {
 
-	
+	BankAccount a = (100);
+	cout << a.get_balance();
+
 	BankAccount account(500);
 	auto balance = account.get_balance();
 	cout << "Balance is: " << balance;
