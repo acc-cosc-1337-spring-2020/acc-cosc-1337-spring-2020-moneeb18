@@ -15,7 +15,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream & out, const Rect & b);
 private:
-	void calculate_area();
+	void calculate_area(); 
 	int width;
 	int height;
 	int area;
