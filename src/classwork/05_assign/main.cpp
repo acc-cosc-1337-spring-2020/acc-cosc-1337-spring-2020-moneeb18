@@ -18,7 +18,7 @@ int main()
 	std::vector<Rect>rectangle{ Rect(4,5),Rect(10,10),Rect(100,10) };
 	int total = 0;
 	for (auto r : rectangle) {
-		cout << r.get_area() << "\n";
+		cout <<r << "\n";
 		total += r.get_area();
 	}
 	cout << "The total value of all the areas: " << total;
