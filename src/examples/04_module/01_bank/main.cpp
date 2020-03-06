@@ -4,10 +4,12 @@ using std::cout;using std::cin;
 int main()
 {
 
-	BankAccount a = (100);
+	BankAccount c = account + act1;
+	std::cin >> account;
 	cout << a.get_balance();
 
-	BankAccount account(500);
+	BankAccount account(500), act1;
+	display_balance(account);
 	auto balance = account.get_balance();
 	cout << "Balance is: " << balance;
 	auto amount{ 0 };
