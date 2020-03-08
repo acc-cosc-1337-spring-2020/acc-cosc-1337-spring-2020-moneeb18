@@ -1,39 +1,54 @@
 //cpp
-#include <iostream>
-Board::Board()
+#include "tic_tac_toe.h"
+
+void TicTacToe::start_game(std::string first_player)
 {
-	turn = 'X';
-	for (int i = 0; i < 9; i++)
+
+	if (first_player == "X" || first_player == " O ")
 	{
-		boardArr[i] =' ';
+
+		player = first_player;
+
 	}
+	else if (first_player == " ")
+	{
+
+		throw Error("Player Must Start Game first: ");
+	}
+	else
+	{
+		throw Error("Player Must Be X or O. ");
+	}
+
+
 }
 
-void Board::print()
+void TicTacToe::mark_board(int position)
 {
-	std::cout << "[" << boardArr[0] << "] ";
-	std::cout << "[" << boardArr[1] << "] ";
-	std::cout << "[" << boardArr[2] << "]\n ";
-	std::cout << "[" << boardArr[3] << "] ";
-	std::cout << "[" << boardArr[4] << "] ";
-	std::cout << "[" << boardArr[5] << "]\n ";
-	std::cout << "[" << boardArr[6] << "] ";
-	std::cout << "[" << boardArr[7] << "] ";
-	std::cout << "[" << boardArr[8] << "]\n ";
+
+	if (position < 1 || position > 9)
+	{
+
+		throw Error("Position must be 1 to 9.");
+
+	}
+
+	set_next_player();
+
+
 
 }
 
-void Board::changeTurn()
+void TicTacToe::set_next_player()
 {
-	turn = (turn == 'X') ? 'O' : 'X';
-}
-bool Board::makeMove(int pos)
-{
-	if (pos < 1 || poz >9) {
-		return false;
+	if (player == "X")
+	{
+		player = "O";
 	}
-	if (boardArr[pos] != ' ') {
-		return false;
+	else
+	{
+		player = "X";
+
 	}
-	return;
-}
+
+}.h file

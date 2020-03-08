@@ -1,3 +1,69 @@
 add_executable(tic_tac_toe_tests "tic_tac_toe_tests.cpp")
 target_link_libraries(tic_tac_toe_tests tic_tac_toe_library)
 add_test(NAME tic_tac_toe_tests COMMAND tic_tac_toe_tests -s)
+
+
+TEST_CASE("Verify Test Configuration", "verification") {
+	REQUIRE(true == true);
+}
+
+TEST_CASE("Test can't call mark.board before start game") {
+	
+	TicTacToe game;
+	REQUIRE_THROWS_AS(game.mark_board(1), Error)
+
+
+}
+TEST_CASE("Test start game accepts only X or O")
+{
+	TicTacToe game;
+	REQUIRE_THROWS_AS(game.start_game() != "X" , "O", Error);
+	
+
+}
+TEST_CASE("Test set first player to X")
+{
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE(game.start_game(1), Error);
+
+}
+
+TEST_CASE("Test set first player to O")
+{
+
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE(game.get_player() == "X");
+
+}
+
+TEST_CASE("Test start game with X flow")
+{
+	
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE(get_player() == "X");
+
+	game.mark_board(4);
+	REQUIRE(get_player() == "O");
+
+}
+
+
+TEST_CASE("Test start game with O flow")
+{
+	TicTacToe game;
+	game.start_game("O");
+	REQUIRE(get_player() == "O");
+
+	game.mark_board(2);
+	REQUIRE(get_player() == "X");
+
+}
+
+
+
+
+
+
