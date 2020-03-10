@@ -1,4 +1,6 @@
 //h
+#include<string>
+
 class Error
 {
 public:
@@ -15,12 +17,12 @@ class TicTacToe
 
 public:
 	void start_game(std::string first_player);
-	std::string get_player() const;//{ return player; }
+	std::string get_player() const { return player; }
 	void mark_board(int position);
 
 
 private:
 	void set_next_player();
-	std::string player{ 0 };
+	std::string player;
 
 };
