@@ -7,12 +7,15 @@ bool TicTacToe::game_over()
 	/*bool TicTacToe::game_over();
 	return check_board_full();*/
 	if (check_column_win() == true || check_row_win() == true || check_diagonal_win() == true) {
-		set_winner();
+		set_winner(player);
 		return true;
 	}
 	else if (check_board_full() == true) {
 		winner = 'C';
 		return true;
+	}
+	else {
+		return false;
 	}
 }
 
@@ -150,6 +153,9 @@ bool TicTacToe::check_diagonal_win()
 	return false;
 }
 
-void TicTacToe::set_winner()
+void TicTacToe::set_winner(std::string win)
 {
+	if (win == 'X') || (win == 'O') || (win == 'C') {
+		winner = win;
+	}
 }
