@@ -4,9 +4,16 @@
 
 bool TicTacToe::game_over()
 {
-	bool TicTacToe::game_over();
-	return check_board_full();
-	
+	/*bool TicTacToe::game_over();
+	return check_board_full();*/
+	if (check_column_win() == true || check_row_win() == true || check_diagonal_win() == true) {
+		set_winner();
+		return true;
+	}
+	else if (check_board_full() == true) {
+		winner = 'C';
+		return true;
+	}
 }
 
 void TicTacToe::start_game(std::string first_player)
@@ -94,4 +101,55 @@ void TicTacToe::clear_board()
 	{
 		peg = " ";
 	}
+}
+
+bool TicTacToe::check_column_win()
+{
+	if (pegs[0]==player && pegs[3]== player && pegs[6] == player)
+	{
+		return true;
+	}
+	else if (pegs[1] == player && pegs[4] == player && pegs[7] == player)
+	{
+		return true;
+	}
+	else if (pegs[2] == player && pegs[5] == player && pegs[8] == player)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool TicTacToe::check_row_win()
+{
+	if (pegs[0] == player && pegs[1] == player && pegs[2] == player)
+	{
+		return true;
+	}
+	else if (pegs[3] == player && pegs[4] == player && pegs[5] == player)
+	{
+		return true;
+	}
+	else if (pegs[6] == player && pegs[7] == player && pegs[8] == player)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool TicTacToe::check_diagonal_win()
+{
+	if (pegs[0] == player && pegs[4] == player && pegs[8] == player)
+	{
+		return true;
+	}
+	else if (pegs[6] == player && pegs[4] == player && pegs[2] == player)
+	{
+		return true;
+	}
+	return false;
+}
+
+void TicTacToe::set_winner()
+{
 }
