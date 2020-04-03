@@ -72,3 +72,38 @@ TEST_CASE("Test game ends when board is full")
 	game.mark_board(9);
 	REQUIRE(game.game_over() == true);
 }
+
+TEST_CASE("Win by first column") {
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE(board.game_over('X') == true);
+	board.mark_board(1);//X        
+	REQUIRE(board.game_over('O') == false);
+	board.mark_board(2);//O          
+	REQUIRE(board.game_over('X') == true);
+	board.mark_board(4);//X          
+	REQUIRE(board.game_over('O') == false);
+	board.mark_board(5);//O          
+	REQUIRE(board.game_over('X') == true);
+	board.mark_board(7);//X
+	//X wins
+	REQUIRE(board.game_over() == true);
+}
+
+TEST_CASE("Win by second column") {
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//O          
+	REQUIRE(board.game_over() == false);
+	board.mark_board(4);//X          
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//O          
+	REQUIRE(board.game_over() == false);
+	board.mark_board(7);//X
+	//X wins
+	REQUIRE(board.game_over() == true);
+}
+
