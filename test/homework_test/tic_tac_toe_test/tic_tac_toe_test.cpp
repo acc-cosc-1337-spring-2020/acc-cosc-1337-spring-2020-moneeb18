@@ -57,7 +57,7 @@ TEST_CASE("Verify TicTacToe test game flow X")
 }
 
 
-TEST_CASE("Test game ends when board is full")
+/*TEST_CASE("Test game ends when board is full")
 {
 	TicTacToe game;
 	game.start_game("X");
@@ -70,7 +70,7 @@ TEST_CASE("Test game ends when board is full")
 
 
 	game.mark_board(9);
-	REQUIRE(game.game_over() == true);
+	REQUIRE(game.game_over() == true);*/
 }
 
 TEST_CASE("Win by first column") {
@@ -231,4 +231,13 @@ TEST_CASE("For no Winner") {
 	REQUIRE(board.game_over() == false);
 	board.mark_board(9);//X          
 	REQUIRE(board.game_over() == true);
+}
+
+TEST_CASE("Mark position") {
+	TicTacToe game;
+	game.start_game("X");
+	REQUIRE_THROWS_AS(game.mark_board(0), Error);
+	REQUIRE_THROWS_AS(game.mark_board(10), Error);
+	game.mark_board(5);
+
 }
