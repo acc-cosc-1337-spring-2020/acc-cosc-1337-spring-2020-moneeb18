@@ -76,15 +76,15 @@ TEST_CASE("Verify TicTacToe test game flow X")
 TEST_CASE("Win by first column") {
 	TicTacToe game;
 	game.start_game("X");
-	REQUIRE(game.game_over() == true);
+	REQUIRE(game.game_over() == false);
 	game.mark_board(1);//X        
 	REQUIRE(game.game_over() == false);
 	game.mark_board(2);//O          
-	REQUIRE(game.game_over() == true);
+	REQUIRE(game.game_over() == false);
 	game.mark_board(4);//X          
 	REQUIRE(game.game_over() == false);
 	game.mark_board(5);//O          
-	REQUIRE(game.game_over() == true);
+	REQUIRE(game.game_over() == false);
 	game.mark_board(7);//X
 	//X wins
 	REQUIRE(game.game_over() == true);
