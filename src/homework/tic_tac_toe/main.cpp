@@ -1,4 +1,6 @@
-#include &quot;tic_tac_toe.h&quot;
+#include <&quot>
+#include"tic_tac_toe.h"
+#include &quot;
 using namespace std;
 #include <string>
 //sing std::cout; using std::cin;

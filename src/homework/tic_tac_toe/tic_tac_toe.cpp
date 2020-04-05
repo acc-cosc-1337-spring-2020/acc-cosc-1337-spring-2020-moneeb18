@@ -89,7 +89,7 @@ void TicTacToe::set_next_player()
 
 bool TicTacToe::check_board_full()
 {
-	for (std::size_t i = 0 < pegs.size();++i){
+	for (std::size_t i = 0;i< pegs.size(); ++i) {
 		if (pegs[i] == " ")
 		{
 			return false;
