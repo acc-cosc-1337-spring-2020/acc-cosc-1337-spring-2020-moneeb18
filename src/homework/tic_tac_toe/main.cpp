@@ -1,5 +1,7 @@
 #include &quot;tic_tac_toe.h&quot;
-using std::cout; using std::cin;
+using namespace std;
+#include <string>
+//sing std::cout; using std::cin;
 int main()
 {
 	std::string first_player;

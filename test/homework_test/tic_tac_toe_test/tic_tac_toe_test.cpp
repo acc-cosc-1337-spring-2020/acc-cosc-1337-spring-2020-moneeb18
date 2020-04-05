@@ -70,8 +70,8 @@ TEST_CASE("Verify TicTacToe test game flow X")
 
 
 	game.mark_board(9);
-	REQUIRE(game.game_over() == true);*/
-}
+	REQUIRE(game.game_over() == true);
+}*/
 
 TEST_CASE("Win by first column") {
 	TicTacToe game;
