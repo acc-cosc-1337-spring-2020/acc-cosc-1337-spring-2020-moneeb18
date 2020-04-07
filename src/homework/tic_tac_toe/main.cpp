@@ -10,6 +10,7 @@ int main()
 	std::string choice;
 	bool winner;
 	TicTacToe game;
+	TicTacToeManager allGames;
 	do 
 	{
 		while (!(first_player == "X" || first_player == "O" || first_player == "x" || first_player == "o"))

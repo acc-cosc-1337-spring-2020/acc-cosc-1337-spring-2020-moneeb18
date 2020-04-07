@@ -169,3 +169,21 @@ void TicTacToe::set_winner()
 		winner = win;
 	}*/
 }
+
+
+TicTacToeManager::TicTacToeManager() {
+	x_win = 0;
+	o_win = 0;
+	tie = 0;
+
+}
+
+void TicTacToeManager::save_game(const TicTacToe b)
+{//append the incoming game to the list
+	//call updatewinnercount
+	
+}
+
+void TicTacToeManager::UpdateWinnerCount(string winner)
+{//if statement
+}
