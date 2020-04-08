@@ -41,13 +41,13 @@ private:
 class TicTacToeManager {
 public:
 	void save_game(const TicTacToe b);
-	friend ostream& operator<<(std::ostream & out, const TicTacToeManager & manager);
+	friend std::ostream& operator<<(std::ostream & out, const TicTacToeManager & manager);
 
 private:
 	std::vector<TicTacToe>games;
 	int x_win;
 	int o_win;
 	int tie;
-	void  UpdateWinnerCount(string winner);
+	void  UpdateWinnerCount(std::string winner);
 };
 

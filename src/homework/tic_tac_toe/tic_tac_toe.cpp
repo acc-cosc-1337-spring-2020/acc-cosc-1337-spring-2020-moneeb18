@@ -164,7 +164,7 @@ bool TicTacToe::check_diagonal_win()
 void TicTacToe::set_winner()
 {
 	if (player == "X") { winner = 'O'; }
-	else { winner = 'O'; }
+	else { winner = 'C'; }
 	/*(win == 'O') || (win == 'C') {
 		winner = win;
 	}*/
@@ -184,6 +184,14 @@ void TicTacToeManager::save_game(const TicTacToe b)
 	
 }
 
-void TicTacToeManager::UpdateWinnerCount(string winner)
+void TicTacToeManager::UpdateWinnerCount(std::string winner)
 {//if statement
+	if (winner == "X") { 1 + x_win; }
+	else if (winner == "O") { 1 + o_win; }
+	else if (winner == "C") { 1 + tie; }
+}
+
+std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
+{
+	// TODO: insert return statement here
 }
