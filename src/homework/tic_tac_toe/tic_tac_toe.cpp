@@ -7,7 +7,7 @@ bool TicTacToe::game_over()
 {
 	/*bool TicTacToe::game_over();
 	return check_board_full();*/
-	if (check_column_win() == true || check_row_win() == true || check_diagonal_win() == true) {
+	if (check_column_win() || check_row_win()|| check_diagonal_win()) {
 		set_winner();
 		return true;
 	}
@@ -53,7 +53,7 @@ void TicTacToe::mark_board(int position)
 		throw Error("Player Must Start Game first: ");
 	}
 	pegs[position - 1]=player;
-	set_next_player();
+	if (!game_over()) { set_next_player(); }
 
 
 
@@ -163,9 +163,10 @@ bool TicTacToe::check_diagonal_win()
 
 void TicTacToe::set_winner()
 {
-	if (player == "X") { winner = 'O'; }
+	winner = player;
+	/*if (player == "X") { winner = 'O'; }
 	else { winner = 'C'; }
-	/*(win == 'O') || (win == 'C') {
+	(win == 'O') || (win == 'C') {
 		winner = win;
 	}*/
 }
@@ -181,18 +182,27 @@ TicTacToeManager::TicTacToeManager() {
 void TicTacToeManager::save_game(const TicTacToe b)
 {//append the incoming game to the list
 	//call updatewinnercount
-	
+	games.push_back(b);
+	UpdateWinnerCount(b.get_winner());
 }
 
 void TicTacToeManager::UpdateWinnerCount(std::string winner)
 {//if statement
-	if (winner == "X") { 1 + x_win; }
-	else if (winner == "O") { 1 + o_win; }
-	else if (winner == "C") { 1 + tie; }
+	if (winner == "X") { x_win++; }
+	else if (winner == "O") {o_win++; }
+	else if (winner == "C") { tie++; }
 }
 
 std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
 {
 	// TODO: insert return statement here
+	for (size_t i = 0; i <manager.games.size() ; i++)
+	{
+		manager.games.at(i).display_board();
+	}
+	out << "X won: " << manager.x_win << "O won: " << manager.o_win << "Ties: " << manager.tie;
+	if (manager.x_win > manager.o_win && manager.x_win > manager.tie) { out << "X won the most!"; }
+	else if (manager.o_win > manager.tie) { out << "O won the most!"; }
+	else { out << "Ties are the most!"; }
 	return out;
 }

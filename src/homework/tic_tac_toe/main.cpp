@@ -9,10 +9,11 @@ int main()
 	//int position;
 	std::string choice;
 	bool winner;
-	TicTacToe game;
+	
 	TicTacToeManager allGames;
-	do 
+	do
 	{
+		TicTacToe game;
 		while (!(first_player == "X" || first_player == "O" || first_player == "x" || first_player == "o"))
 		{
 			try
@@ -29,11 +30,13 @@ int main()
 		do
 		{
 			try {
-				int position;
+				/*int position;
 				cout << " Mark the position 1 to 9 that you would like to take: " << endl;
 				cin >> position;
 				game.mark_board(position);
-				game.display_board();
+				game.display_board();*/
+				cin >> game;
+				cout << game;
 				winner = game.game_over();
 
 			}
@@ -43,9 +46,28 @@ int main()
 			}
 
 		} while (winner == false);
+		allGames.save_game(game);
 		cout << "The winner is: " << game.get_winner() << endl;
 		cout << "To continue press Y : " << endl;
 	} 
 	while (choice == "Y"||choice =="y");
 	return 0;
+}
+
+std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
+{
+	
+	game.display_board();
+	
+	return out;
+}
+
+std::istream & operator>>(std::istream & in,  TicTacToe & game)
+{
+	int position;
+	cout << " Mark the position 1 to 9 that you would like to take: " << endl;
+	in >> position;
+	game.mark_board(position);
+
+	return in;
 }

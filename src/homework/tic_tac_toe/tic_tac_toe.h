@@ -22,7 +22,7 @@ public:
 	std::string get_player() const { return player; }
 	void mark_board(int position);
 	void display_board()const;
-	std::string get_winner() {return winner;};
+	std::string get_winner()const {return winner;};
 
 
 private:
@@ -49,5 +49,6 @@ private:
 	int o_win;
 	int tie;
 	void  UpdateWinnerCount(std::string winner);
+
 };
 
