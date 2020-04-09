@@ -17,7 +17,7 @@ class TicTacToe
 {
 
 public:
-	bool TicTacToe::game_over();
+	bool game_over();
 	void start_game(std::string first_player);
 	std::string get_player() const { return player; }
 	void mark_board(int position);
@@ -42,7 +42,7 @@ class TicTacToeManager {
 public:
 	void save_game(const TicTacToe b);
 	friend std::ostream& operator<<(std::ostream & out, const TicTacToeManager & manager);
-
+	 TicTacToeManager();
 private:
 	std::vector<TicTacToe>games;
 	int x_win;

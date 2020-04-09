@@ -172,7 +172,8 @@ void TicTacToe::set_winner()
 }
 
 
-TicTacToeManager::TicTacToeManager() {
+TicTacToeManager::TicTacToeManager()
+{
 	x_win = 0;
 	o_win = 0;
 	tie = 0;
@@ -188,6 +189,7 @@ void TicTacToeManager::save_game(const TicTacToe b)
 
 void TicTacToeManager::UpdateWinnerCount(std::string winner)
 {//if statement
+
 	if (winner == "X") { x_win++; }
 	else if (winner == "O") {o_win++; }
 	else if (winner == "C") { tie++; }

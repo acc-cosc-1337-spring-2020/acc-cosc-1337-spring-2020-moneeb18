@@ -52,6 +52,7 @@ int main()
 		cout << "To continue press Y : " << endl;
 	} 
 	while (choice == "Y"||choice =="y");
+	cout << allGames;
 	return 0;
 }
 
