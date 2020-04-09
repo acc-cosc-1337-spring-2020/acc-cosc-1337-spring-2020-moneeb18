@@ -47,6 +47,7 @@ int main()
 
 		} while (winner == false);
 		allGames.save_game(game);
+		allGames;
 		cout << "The winner is: " << game.get_winner() << endl;
 		cout << "To continue press Y : " << endl;
 	} 
