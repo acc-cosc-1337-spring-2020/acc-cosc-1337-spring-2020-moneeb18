@@ -36,7 +36,7 @@ int main()
 				game.mark_board(position);
 				game.display_board();*/
 				cin >> game;
-				cout << game;
+				cout << allGames;
 				winner = game.game_over();
 
 			}
