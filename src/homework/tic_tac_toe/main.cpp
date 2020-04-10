@@ -56,7 +56,7 @@ int main()
 	return 0;
 }
 
-std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
+/*std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
 {
 	
 	game.display_board();
@@ -72,4 +72,4 @@ std::istream & operator>>(std::istream & in,  TicTacToe & game)
 	game.mark_board(position);
 
 	return in;
-}
+}*/
