@@ -26,8 +26,8 @@ public:
 	std::string get_winner()const {return winner;};
 	//friend std::istream& operator>>(std::istream & in, const TicTacToe & mark_board);
 	//friend std::ostream& operator<<(std::ostream & out, const TicTacToe & display_board);
-	friend std::istream& operator>>(std::istream & in, const TicTacToe& game);
-	friend std::iostream& operator<<(std::iostream & out, const TicTacToe& game);
+	friend std::iostream& operator>>(std::iostream & in, const TicTacToe& game);
+	friend std::ostream& operator<<(std::ostream & out, const TicTacToe& game);
 
 private:
 	void set_next_player();
@@ -42,7 +42,8 @@ private:
 	std::string winner;
 };
 
-class TicTacToeManager {
+class TicTacToeManager
+{
 public:
 	void save_game(const TicTacToe b);
 	friend std::ostream& operator<<(std::ostream & out, const TicTacToeManager & manager);
