@@ -37,7 +37,7 @@ void TicTacToe::start_game(std::string first_player)
 
 }
 
-void TicTacToe::mark_board(int position)
+/*void TicTacToe::mark_board(int position)
 {
 
 	if (position < 1 || position > 9)
@@ -67,7 +67,7 @@ void TicTacToe::display_board() const
 	{
 		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 	}
-}
+}*/
 
 
 
@@ -206,5 +206,36 @@ std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
 	if (manager.x_win > manager.o_win && manager.x_win > manager.tie) { out << "X won the most!"; }
 	else if (manager.o_win > manager.tie) { out << "O won the most!"; }
 	else { out << "Ties are the most!"; }
+	return out;
+}
+
+
+std::istream& operator>>(std::istream & in, const TicTacToe & mark_board)
+{
+	if (position < 1 || position > 9)
+	{
+
+		throw Error("Position must be 1 to 9.");
+
+	}
+
+	if (player == "")
+	{
+
+		throw Error("Player Must Start Game first: ");
+	}
+	pegs[position - 1] = player;
+	if (!game_over()) { set_next_player(); }
+
+	return in;
+}
+
+std::ostream& operator<<(std::ostream & out, const TicTacToe & display_board)
+{
+	for (int i = 0; i < 9; i += 3)
+	{
+		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
+	}
+
 	return out;
 }
