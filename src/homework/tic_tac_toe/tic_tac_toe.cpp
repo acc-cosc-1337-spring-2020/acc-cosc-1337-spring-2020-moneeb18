@@ -37,7 +37,7 @@ void TicTacToe::start_game(std::string first_player)
 
 }
 
-/*void TicTacToe::mark_board(int position)
+void TicTacToe::mark_board(int position)
 {
 
 	if (position < 1 || position > 9)
@@ -67,7 +67,7 @@ void TicTacToe::display_board() const
 	{
 		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 	}
-}*/
+}
 
 
 
@@ -210,7 +210,7 @@ std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
 }
 
 
-std::istream& operator>>(std::istream & in, const TicTacToe & mark_board)
+/*std::istream& operator>>(std::istream & in, const TicTacToe & mark_board)
 {
 	if (position < 1 || position > 9)
 	{
@@ -238,4 +238,4 @@ std::ostream& operator<<(std::ostream & out, const TicTacToe & display_board)
 	}
 
 	return out;
-}
+}*/
