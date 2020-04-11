@@ -249,7 +249,7 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
 	return out;
 }
 
-std::iostream & operator>>(std::iostream & in, TicTacToe & game)
+std::istream & operator>>(std::istream & in, TicTacToe & game)
 {
 	int position;
 	cout << " Mark the position 1 to 9 that you would like to take: " << endl;

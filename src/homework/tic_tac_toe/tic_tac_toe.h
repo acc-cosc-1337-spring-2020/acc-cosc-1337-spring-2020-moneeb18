@@ -26,7 +26,7 @@ public:
 	std::string get_winner()const {return winner;};
 	//friend std::istream& operator>>(std::istream & in, const TicTacToe & mark_board);
 	//friend std::ostream& operator<<(std::ostream & out, const TicTacToe & display_board);
-	friend std::iostream& operator>>(std::iostream & in, const TicTacToe& game);
+	friend std::istream& operator>>(std::istream & in, TicTacToe& game);
 	friend std::ostream& operator<<(std::ostream & out, const TicTacToe& game);
 
 private:
