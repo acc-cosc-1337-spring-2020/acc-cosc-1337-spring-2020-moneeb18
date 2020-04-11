@@ -202,10 +202,10 @@ std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
 	{
 		manager.games.at(i).display_board();
 	}
-	out << "X won: " << manager.x_win << "O won: " << manager.o_win << "Ties: " << manager.tie;
-	if (manager.x_win > manager.o_win && manager.x_win > manager.tie) { out << "X won the most!"; }
-	else if (manager.o_win > manager.tie) { out << "O won the most!"; }
-	else { out << "Ties are the most!"; }
+	out << "X won: " << manager.x_win << " O won: " << manager.o_win << " Ties: " << manager.tie;
+	if (manager.x_win > manager.o_win && manager.x_win > manager.tie) { out << " X won the most!"; }
+	else if (manager.o_win > manager.tie) { out << " O won the most!"; }
+	else { out << " Ties are the most!"; }
 	return out;
 }
 
