@@ -5,14 +5,15 @@ using namespace std;
 using std::cout; using std::cin;
 int main()
 {
-	std::string first_player;
+	
 	//int position;
-	std::string choice;
+	auto choice ='Y' ;
 	bool winner;
 	
 	TicTacToeManager allGames;
 	do
 	{
+		std::string first_player;
 		TicTacToe game;
 		while (!(first_player == "X" || first_player == "O" || first_player == "x" || first_player == "o"))
 		{
@@ -49,10 +50,11 @@ int main()
 		allGames.save_game(game);
 		allGames;
 		cout << "The winner is: " << game.get_winner() << endl;
+		cout << allGames<<endl;
 		cout << "To continue press Y : " << endl;
 		cin >> choice;
-	} while (choice == "Y"||choice =="y");
-	cout << allGames;
+	} while (choice == 'Y'||choice =='y');
+	
 	return 0;
 }
 
