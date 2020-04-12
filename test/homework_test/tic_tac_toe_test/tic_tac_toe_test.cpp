@@ -89,6 +89,7 @@ TEST_CASE("Win by first column") {
 	game.mark_board(7);//X
 	//X wins
 	REQUIRE(game.game_over() == true);
+	REQUIRE(game.get_winner() == "X");
 }
 
 TEST_CASE("Win by second column") {
