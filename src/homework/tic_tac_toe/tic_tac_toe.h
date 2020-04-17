@@ -34,18 +34,14 @@ private:
 	bool check_board_full();
 	void clear_board();
 	std::string player;
-	//std::vector<std::string>pegs{ 9," " };
-	//bool check_column_win();
-	//bool check_row_win();
-	//bool check_diagonal_win();
 	void set_winner();
 	std::string winner;
 
 protected:
-	std::vector<std::string>pegs{ 9," " };
-	bool check_column_win();
-	bool check_row_win();
-	bool check_diagonal_win();
+	std::vector<std::string>pegs{};
+	virtual bool check_column_win();
+	virtual bool check_row_win();
+	virtual bool check_diagonal_win();
 };
 
 class TicTacToeManager
@@ -57,7 +53,7 @@ public:
 	 //friend std::istream& operator>>(std::istream & in, const TicTacToe game);
 	 //friend std::iostream& operator<<(std::iostream & out, const TicTacToe game);
 private:
-	std::vector/*<std::reference_wrapper*/<TicTacToe>/*>*/games;
+	std::vector<std::reference_wrapper<TicTacToe>>games;
 	int x_win;
 	int o_win;
 	int tie;
