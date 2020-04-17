@@ -57,7 +57,7 @@ public:
 	 //friend std::istream& operator>>(std::istream & in, const TicTacToe game);
 	 //friend std::iostream& operator<<(std::iostream & out, const TicTacToe game);
 private:
-	std::vector<TicTacToe>games;
+	std::vector<std::reference_wrapper<TicTacToe>>games;
 	int x_win;
 	int o_win;
 	int tie;
