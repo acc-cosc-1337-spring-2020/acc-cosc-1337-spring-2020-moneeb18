@@ -67,6 +67,10 @@ void TicTacToe::display_board() const
 	{
 		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 	}
+	for (int i = 0; i < 16; i += 4)
+	{
+		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
+	}
 }
 
 
