@@ -52,6 +52,8 @@ bool TicTacToe4::check_column_win()
 		return true;
 	}
 	else if (pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O") { return true; }
+	//else if (std::size_t i = 0; i < pegs.size(); ++i) {return false;}
+	
 	return false;
 }
 
