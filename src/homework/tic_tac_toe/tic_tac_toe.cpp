@@ -61,8 +61,9 @@ void TicTacToe::mark_board(int position)
 
 
 
-void TicTacToe::display_board() const
+/*void TicTacToe::display_board() const
 {
+	if 
 	for (int i = 0;i < 9;i += 3)
 	{
 		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
@@ -71,7 +72,7 @@ void TicTacToe::display_board() const
 	{
 		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 	}
-}
+}*/
 
 
 
@@ -210,18 +211,41 @@ std::ostream& operator<<(std::ostream & out, const TicTacToe & display_board)
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
 {
-
-	game.display_board();
+	if (game.pegs.size() == 9) {
+		for (int i = 0; i < 9; i += 3)
+		{
+			out << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "\n";
+		}
+	}
+	else if (game.pegs.size()==16){
+		for (int i = 0; i < 16; i += 4)
+		{
+			out << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "\n";
+		}
+	}
+	//game.display_board();
 
 	return out;
 }
 
 std::istream & operator>>(std::istream & in, TicTacToe & game)
 {
-	int position;
-	cout << " Mark the position 1 to 9 that you would like to take: " << endl;
-	in >> position;
-	game.mark_board(position);
 
+		if (game.pegs.size() == 9) {
+			int position;
+			cout << " Mark the position 1 to 9 that you would like to take: " << endl;
+			in >> position;
+			game.mark_board(position);
+			cout << "\n";
+		}
+		else if (game.pegs.size() == 16) {
+			int position;
+			cout << " Mark the position 1 to 16 that you would like to take: " << endl;
+			in >> position;
+			game.mark_board(position);
+			cout << "\n";
+		}
+		
+		
 	return in;
 }
