@@ -1,5 +1,7 @@
 //main
 #include"tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 using namespace std;
 #include <string>
 using std::cout; using std::cin;
@@ -9,8 +11,16 @@ int main()
 	//int position;
 	auto choice ='Y' ;
 	bool winner;
-	
+	int TypeOfGame;
 	TicTacToeManager allGames;
+	cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
+	cin >> TypeOfGame;
+	if (TypeOfGame == 3) {
+		TicTacToe3 game;
+	}
+	else if (TypeOfGame == 4) {
+		TicTacToe4 game;
+	}
 	do
 	{
 		std::string first_player;
@@ -31,11 +41,7 @@ int main()
 		do
 		{
 			try {
-				/*int position;
-				cout << " Mark the position 1 to 9 that you would like to take: " << endl;
-				cin >> position;
-				game.mark_board(position);
-				game.display_board();*/
+			
 				cin >> game;
 				cout << game;
 				winner = game.game_over();
