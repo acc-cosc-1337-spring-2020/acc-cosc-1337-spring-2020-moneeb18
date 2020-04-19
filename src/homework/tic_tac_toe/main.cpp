@@ -15,12 +15,14 @@ int main()
 	auto choice ='Y' ;
 	bool winner;
 	int TypeOfGame;
+	std::vector<std::reference_wrapper<TicTacToe>> games;
 	TicTacToeManager allGames;
 	cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
 	cin >> TypeOfGame;
 	if (TypeOfGame == 3)
 	{
 		TicTacToe3 game3;
+		games.emplace_back(game3);
 		do
 		{
 			std::string first_player;
@@ -68,6 +70,7 @@ int main()
 	else if (TypeOfGame == 4) 
 	{
 		TicTacToe4 game4;
+		games.emplace_back(game4);
 		do
 		{
 			std::string first_player;
