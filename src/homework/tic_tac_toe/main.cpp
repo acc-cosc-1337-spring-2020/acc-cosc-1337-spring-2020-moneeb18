@@ -2,6 +2,8 @@
 #include"tic_tac_toe.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
+#include "tic_tac_toe_manager.h"
+#include "Error.h"
 using namespace std;
 #include <string>
 #include <vector>
@@ -19,11 +21,9 @@ int main()
 	if (TypeOfGame == 3)
 	{
 		TicTacToe3 game3;
-		games.push_back(game3);
 		do
 		{
 			std::string first_player;
-			TicTacToe game3;
 			while (!(first_player == "X" || first_player == "O" || first_player == "x" || first_player == "o"))
 			{
 				try
@@ -53,24 +53,24 @@ int main()
 				}
 
 			}
+
 			while (winner == false);
+			allGames.save_game(game3);
+			allGames;
+			cout << "The winner is: " << game3.get_winner() << endl;
+			cout << allGames << endl;
+			cout << "To continue press Y : " << endl;
+			cin >> choice;
 		}
+		while (choice == 'Y' || choice == 'y');
 		
-		allGames.save_game(game3);
-		allGames;
-		cout << "The winner is: " << game3.get_winner() << endl;
-		cout << allGames << endl;
-		cout << "To continue press Y : " << endl;
-		cin >> choice;
 	}
 	else if (TypeOfGame == 4) 
 	{
 		TicTacToe4 game4;
-		games.push_back(game4);
 		do
 		{
 			std::string first_player;
-			TicTacToe game4;
 			while (!(first_player == "X" || first_player == "O" || first_player == "x" || first_player == "o"))
 			{
 				try
@@ -100,17 +100,18 @@ int main()
 				}
 			}
 			while (winner == false);
+			allGames.save_game(game4);
+			allGames;
+			cout << "The winner is: " << game4.get_winner() << endl;
+			cout << allGames << endl;
+			cout << "To continue press Y : " << endl;
+			cin >> choice;
 		}
+		while (choice == 'Y' || choice == 'y');
 		
-		allGames.save_game(game4);
-		allGames;
-		cout << "The winner is: " << game4.get_winner() << endl;
-		cout << allGames << endl;
-		cout << "To continue press Y : " << endl;
-		cin >> choice;
 	}
 	 
-	} while (choice == 'Y'||choice =='y');
+
 	
 	return 0;
 }

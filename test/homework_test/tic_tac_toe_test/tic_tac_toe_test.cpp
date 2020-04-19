@@ -4,6 +4,7 @@
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
+#include "Error.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -12,13 +13,13 @@ TEST_CASE("Verify Test Configuration", "verification") {
 TEST_CASE("Verify TicTacToe mark board function")
 {
 	TicTacToe3 game3;
-	REQUIRE_THROWS_AS(game.mark_board(1), Error);
+	REQUIRE_THROWS_AS(game3.mark_board(1), Error);
 }
 
 TEST_CASE("Verify TicTacToe start game function")
 {
 	TicTacToe3 game3;
-	REQUIRE_THROWS_AS(game.start_game("A"), Error);
+	REQUIRE_THROWS_AS(game3.start_game("A"), Error);
 }
 
 TEST_CASE("Verify TicTacToe set first player function X")
@@ -150,7 +151,7 @@ TEST_CASE("Win by second row") {
 	game3.start_game("X");
 	REQUIRE(game3.game_over() == false);
 	game3.mark_board(4);//X        
-	REQUIRE(game.game_over() == false);
+	REQUIRE(game3.game_over() == false);
 	game3.mark_board(3);//O          
 	REQUIRE(game3.game_over() == false);
 	game3.mark_board(5);//X          
@@ -255,13 +256,13 @@ TEST_CASE("Verify Test Configuration", "verification") {
 TEST_CASE("Verify TicTacToe mark board function")
 {
 	TicTacToe3 game3;
-	REQUIRE_THROWS_AS(game.mark_board(1), Error);
+	REQUIRE_THROWS_AS(game3.mark_board(1), Error);
 }
 
 TEST_CASE("Verify TicTacToe start game function")
 {
 	TicTacToe3 game3;
-	REQUIRE_THROWS_AS(game.start_game("A"), Error);
+	REQUIRE_THROWS_AS(game3.start_game("A"), Error);
 }
 
 TEST_CASE("Verify TicTacToe set first player function X")
@@ -393,7 +394,7 @@ TEST_CASE("Win by second row") {
 	game3.start_game("X");
 	REQUIRE(game3.game_over() == false);
 	game3.mark_board(4);//X        
-	REQUIRE(game.game_over() == false);
+	REQUIRE(game3.game_over() == false);
 	game3.mark_board(3);//O          
 	REQUIRE(game3.game_over() == false);
 	game3.mark_board(5);//X          
