@@ -13,7 +13,7 @@ bool TicTacToe::game_over()
 		return true;
 	}
 	else if (check_board_full() == true) {
-		winner = 'C';
+		winner = "C";
 		return true;
 	}
 	else {
@@ -41,10 +41,10 @@ void TicTacToe::start_game(std::string first_player)
 void TicTacToe::mark_board(int position)
 {
 
-	if (position < 1 || position > 9)
+	if (position < 1 || position > pegs.size())
 	{
 
-		throw Error("Position must be 1 to 9.");
+		throw Error("Position out of range.");
 
 	}
 
@@ -54,7 +54,7 @@ void TicTacToe::mark_board(int position)
 		throw Error("Player Must Start Game first: ");
 	}
 	pegs[position - 1]=player;
-	if (!game_over()) { set_next_player(); }
+	set_next_player();
 
 
 
@@ -62,18 +62,6 @@ void TicTacToe::mark_board(int position)
 
 
 
-/*void TicTacToe::display_board() const
-{
-	if 
-	for (int i = 0;i < 9;i += 3)
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-	}
-	for (int i = 0; i < 16; i += 4)
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-	}
-}*/
 
 
 
@@ -132,47 +120,15 @@ bool TicTacToe::check_diagonal_win()
 
 void TicTacToe::set_winner()
 {
-	winner = player;
-	/*if (player == "X") { winner = 'O'; }
-	else { winner = 'C'; }
-	(win == 'O') || (win == 'C') {
-		winner = win;
-	}*/
+	if (player == "X") { winner = "O"; }
+	else { winner = "O"; }
+	
 }
 
 
 
 
 
-/*std::istream& operator>>(std::istream & in, const TicTacToe & mark_board)
-{
-	if (position < 1 || position > 9)
-	{
-
-		throw Error("Position must be 1 to 9.");
-
-	}
-
-	if (player == "")
-	{
-
-		throw Error("Player Must Start Game first: ");
-	}
-	pegs[position - 1] = player;
-	if (!game_over()) { set_next_player(); }
-
-	return in;
-}
-
-std::ostream& operator<<(std::ostream & out, const TicTacToe & display_board)
-{
-	for (int i = 0; i < 9; i += 3)
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-	}
-
-	return out;
-}*/
 
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
@@ -189,7 +145,6 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
 			out << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "\n";
 		}
 	}
-	//game.display_board();
 
 	return out;
 }

@@ -8,10 +8,10 @@ TicTacToeManager::TicTacToeManager()
 
 }
 
-void TicTacToeManager::save_game(const TicTacToe b)
+void TicTacToeManager::save_game(TicTacToe b)
 {//append the incoming game to the list
 	//call updatewinnercount
-	games.emplace_back(b);
+	games.push_back(b);
 	UpdateWinnerCount(b.get_winner());
 }
 
@@ -36,3 +36,4 @@ std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
 	else { out << " Ties are the most!"; }
 	return out;
 }
+
