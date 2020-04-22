@@ -21,6 +21,8 @@ TEST_CASE("Test class copy with dynamic (heap) variables") {
 	v1[1] = 5;
 
 
-	REQUIRE(v1[1] == v2[1]);
+	REQUIRE(v1[1] != v2[1]);
+	REQUIRE(v1[1] == 5);
+	REQUIRE(v2[1] == 0);
 }
 

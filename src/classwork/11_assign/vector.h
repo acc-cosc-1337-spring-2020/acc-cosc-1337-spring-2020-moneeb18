@@ -8,6 +8,8 @@
 class Vector {
 public:
 	Vector(size_t sz);
+	Vector(const Vector& v);
+
 		size_t Size()const { return size; }
 		int& operator[](int i) { return nums[i]; }
 		int& operator[](int i)const { return nums[i]; }
