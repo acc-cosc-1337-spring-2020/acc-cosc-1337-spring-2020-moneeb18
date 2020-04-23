@@ -18,6 +18,20 @@ Vector::Vector(const Vector & v)
 	}
 }
 
+Vector & Vector::operator=(const Vector & v)
+{
+	int* temp = new int[v.size];
+	for (size_t i = 0; i < v.size; ++i)
+	{
+		temp[i] = v[i];
+	}
+	delete nums;
+	nums = temp;
+	size = v.size;
+
+	return *this;
+}
+
 Vector::~Vector()
 {
 	std::cout << "\nrelease memory\n";
