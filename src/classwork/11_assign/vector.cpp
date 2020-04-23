@@ -1,5 +1,5 @@
 #include "vector.h"
-
+#include <iostream>
 Vector::Vector(size_t sz)
 	:size{sz}, nums{new int [sz]}
 {
@@ -18,3 +18,16 @@ Vector::Vector(const Vector & v)
 	}
 }
 
+Vector::~Vector()
+{
+	std::cout << "\nrelease memory\n";
+	delete[] nums;
+}
+
+
+void use_vector()
+{
+	Vector* v1 = new Vector(3);
+	delete v1;
+	v1 = nullptr;
+}
