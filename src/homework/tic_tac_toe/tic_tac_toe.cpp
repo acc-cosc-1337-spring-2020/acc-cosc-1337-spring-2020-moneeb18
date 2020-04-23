@@ -142,7 +142,7 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
 	else if (game.pegs.size()==16){
 		for (int i = 0; i < 16; i += 4)
 		{
-			out << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "\n";
+			out << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] <<"|"<<game.pegs[i+3]<<"|"<<"\n";
 		}
 	}
 

@@ -1,6 +1,6 @@
 //h
 #include "tic_tac_toe.h"
-
+#include "error.h"
 class TicTacToe4 : public TicTacToe
 {
 public:
