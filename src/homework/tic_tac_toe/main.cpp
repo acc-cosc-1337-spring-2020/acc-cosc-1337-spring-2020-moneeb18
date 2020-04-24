@@ -18,18 +18,18 @@ int main()
 	bool winner;
 	int TypeOfGame;
 	TicTacToeManager allGames;
-	std::vector<std::reference_wrapper<TicTacToe>> game;
+	std::vector<std::reference_wrapper<TicTacToe>> games;
 	cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
 	cin >> TypeOfGame;
 	if (TypeOfGame == 3)
 	{
 		TicTacToe3 game3;
-		game.push_back(game3);
+		games.push_back(game3);
 	}
 	else if (TypeOfGame == 4)
 	{
 		TicTacToe4 game4;
-		game.push_back(game4);
+		games.push_back(game4);
 	}
 	std::vector<std::reference_wrapper<TicTacToe>> game = games.back();
 		do
