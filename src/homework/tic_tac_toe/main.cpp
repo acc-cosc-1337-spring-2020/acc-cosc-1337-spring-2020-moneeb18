@@ -73,7 +73,7 @@ int main()
 			allGames->save_game(game.get());
 			allGames;
 			cout << "The winner is: " << game.get().get_winner() << endl;
-			cout << *allGames << endl;
+			cout << allGames* << endl;
 			cout << "To continue press Y : " << endl;
 			cin >> choice;
 		}
