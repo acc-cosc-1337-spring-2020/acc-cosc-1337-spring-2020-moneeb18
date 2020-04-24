@@ -23,11 +23,7 @@ Win by row if
 
 
 /*
-class function check_diagonal_win
-Win diagonally
-0 1 2
-3 4 5
-6 7 8
+
 */
 
 bool TicTacToe3::check_column_win()
@@ -71,14 +67,18 @@ bool TicTacToe3::check_row_win()
 	
 	return false;
 }
-
-bool TicTacToe3::check_diagnol_win()
+/*class function check_diagonal_win
+	Win diagonally
+	0 1 2
+	3 4 5
+	6 7 8*/
+bool TicTacToe3::check_diagonal_win()
 {
 	if (pegs[0] == "X"&& pegs[4] == "X" && pegs[8] == "X")
 	{
 		return true;
 	}
-	else if (pegs[0] == "O"&& pegs[4] == "0" && pegs[8] == "O") { return true; }
+	else if (pegs[0] == "O"&& pegs[4] == "O" && pegs[8] == "O") { return true; }
 	else if (pegs[6] == "X" && pegs[4] == "X" && pegs[2] == "X")
 	{
 		return true;

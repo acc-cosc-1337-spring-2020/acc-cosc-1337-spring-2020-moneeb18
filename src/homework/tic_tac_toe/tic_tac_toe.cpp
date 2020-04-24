@@ -116,7 +116,7 @@ bool TicTacToe::check_diagonal_win()
 void TicTacToe::set_winner()
 {
 	if (player == "X") { winner = "O"; }
-	else { winner = "O"; }
+	else { winner = "X"; }
 	
 }
 

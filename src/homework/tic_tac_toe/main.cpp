@@ -21,20 +21,22 @@ int main()
 	std::vector<std::reference_wrapper<TicTacToe>> games;
 	cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
 	cin >> TypeOfGame;
-	if (TypeOfGame == 3)
-	{
-		TicTacToe3 game3;
-		games.push_back(game3);
-	}
-	else if (TypeOfGame == 4)
-	{
-		TicTacToe4 game4;
-		games.push_back(game4);
-	}
-	std::vector<std::reference_wrapper<TicTacToe>> game = games.back();
 		do
 		{
-			
+			TicTacToe3 game3;
+			TicTacToe4 game4;
+			if (TypeOfGame == 3)
+			{
+
+				games.push_back(game3);
+			}
+			else if (TypeOfGame == 4)
+			{
+
+				games.push_back(game4);
+			}
+				
+			std::reference_wrapper<TicTacToe>game = games.back();
 			std::string first_player;
 			while (!(first_player == "X" || first_player == "O" || first_player == "x" || first_player == "o"))
 			{
@@ -66,10 +68,10 @@ int main()
 
 			}
 
-			while(!games.get().game_over());//(winner == false);
-			allGames.save_game(games.get());
+			while(!game.get().game_over());//(winner == false);
+			allGames.save_game(game.get());
 			allGames;
-			cout << "The winner is: " << games.get_winner(games.get()) << endl;
+			cout << "The winner is: " << game.get().get_winner() << endl;
 			cout << allGames << endl;
 			cout << "To continue press Y : " << endl;
 			cin >> choice;

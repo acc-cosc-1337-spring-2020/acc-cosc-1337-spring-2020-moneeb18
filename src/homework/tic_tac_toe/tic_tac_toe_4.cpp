@@ -14,14 +14,7 @@ false
 
 
 
-/*
-class function check_row_win
-Win by row if
-0, 1,  2,  3 are equal
-4, 5,  6,  7 are equal
-8, 9, 10, 11 are equal 
-12,13,14, 15 are equal
-*/
+
 
 
 
@@ -57,14 +50,22 @@ bool TicTacToe4::check_column_win()
 	else { return false; }
 	return false;
 }
-
+/*
+class function check_row_win
+Win by row if
+0, 1,  2,  3 are equal
+4, 5,  6,  7 are equal
+8, 9, 10, 11 are equal
+12,13,14, 15 are equal
+*/
 bool TicTacToe4::check_row_win()
 {
-	if (pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X" && pegs[4]=="X")
+
+	if (pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X" && pegs[3]=="X")
 	{
 		return true;
 	}
-	else if (pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O" && pegs[4] == "O") { return true; }
+	else if (pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O" && pegs[3] == "O") { return true; }
 	else if (pegs[4] == "X" && pegs[5] == "X" && pegs[6] == "X"&& pegs[7]=="X")
 	{
 		return true;
