@@ -18,7 +18,7 @@ int main()
 	auto choice ='Y' ;
 	bool winner;
 	int TypeOfGame;
-	TicTacToeManager* ptr_allGames;
+	std::unique_ptr<TicTacToeManager>(new allGames);
 	std::vector<std::reference_wrapper<TicTacToe>> games;
 	cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
 	cin >> TypeOfGame;
@@ -70,10 +70,10 @@ int main()
 			}
 
 			while(!game.get().game_over());//(winner == false);
-			allGames->save_game(game.get());
+			allGames.save_game(game.get());
 			allGames;
 			cout << "The winner is: " << game.get().get_winner() << endl;
-			cout << allGames* << endl;
+			cout << allGames << endl;
 			cout << "To continue press Y : " << endl;
 			cin >> choice;
 		}
