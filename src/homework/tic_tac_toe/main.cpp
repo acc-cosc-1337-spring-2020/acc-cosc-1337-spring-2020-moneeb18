@@ -24,12 +24,12 @@ int main()
 	if (TypeOfGame == 3)
 	{
 		TicTacToe3 game3;
-		games.emplace_back(game3);
+		games.push_back(game3);
 	}
 	else if (TypeOfGame == 4)
 	{
 		TicTacToe4 game4;
-		games.emplace_back(game4);
+		games.push_back(game4);
 	}
 		do
 		{

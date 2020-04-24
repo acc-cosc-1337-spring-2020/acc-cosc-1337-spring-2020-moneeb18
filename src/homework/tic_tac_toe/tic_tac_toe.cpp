@@ -62,11 +62,6 @@ void TicTacToe::mark_board(int position)
 
 
 
-
-
-
-
-
 void TicTacToe::set_next_player()
 {
 	if (player == "X")
@@ -124,11 +119,6 @@ void TicTacToe::set_winner()
 	else { winner = "O"; }
 	
 }
-
-
-
-
-
 
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & game)
