@@ -8,7 +8,7 @@ TicTacToeManager::TicTacToeManager()
 
 }
 
-void TicTacToeManager::save_game(TicTacToe b)
+void TicTacToeManager::save_game( std::unique_ptr <TicTacToe>&)
 {//append the incoming game to the list
 	//call updatewinnercount
 	games.push_back(b);

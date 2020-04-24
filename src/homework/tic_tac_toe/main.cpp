@@ -6,6 +6,7 @@
 #include "Error.h"
 #include<iostream>
 #include <functional>
+#include <memory>
 using namespace std;
 #include <string>
 #include <vector>
@@ -17,7 +18,7 @@ int main()
 	auto choice ='Y' ;
 	bool winner;
 	int TypeOfGame;
-	TicTacToeManager allGames;
+	TicTacToeManager* ptr_allGames;
 	std::vector<std::reference_wrapper<TicTacToe>> games;
 	cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
 	cin >> TypeOfGame;
@@ -28,12 +29,12 @@ int main()
 			if (TypeOfGame == 3)
 			{
 
-				games.push_back(game3);
+				std::move(game3);
 			}
 			else if (TypeOfGame == 4)
 			{
 
-				games.push_back(game4);
+				std::move(game4);
 			}
 				
 			std::reference_wrapper<TicTacToe>game = games.back();
@@ -69,10 +70,10 @@ int main()
 			}
 
 			while(!game.get().game_over());//(winner == false);
-			allGames.save_game(game.get());
+			allGames->save_game(game.get());
 			allGames;
 			cout << "The winner is: " << game.get().get_winner() << endl;
-			cout << allGames << endl;
+			cout << *allGames << endl;
 			cout << "To continue press Y : " << endl;
 			cin >> choice;
 		}
