@@ -19,28 +19,26 @@ int main()
 	bool winner;
 	int TypeOfGame;
 	std::unique_ptr<TicTacToeManager>allGames = make_unique<TicTacToeManager>();
-	std::unique_ptr<TicTacToe>allGames = make_unique<TicTacToe>();
+	std::unique_ptr<TicTacToe>game;
 	//std::vector<std::reference_wrapper<TicTacToe>> games;
-	cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
-	cin >> TypeOfGame;
+	
 		do
 		{
+			cout << "To play a 3*3 tictactoe game enter 3 if you want to play a 4*4 tictactoe game enter 4:  \n";
+			cin >> TypeOfGame;
 			std::unique_ptr<TicTacToe>game;
-			TicTacToe3 game3;
-			TicTacToe4 game4;
 			if (TypeOfGame == 3)
 			{
-				std::unique_ptr<TicTacToe>three = make_unique<TicTacToe3>();
-				allGames.push_back(std::move(game));
+				game = make_unique<TicTacToe3>();
+	
 			}
 			else if (TypeOfGame == 4)
 			{
-				std::unique_ptr<TicTacToe>three = make_unique<TicTacToe4>();
-				allGames.push_back(std::move(game));
+				game = make_unique<TicTacToe4>();
+		
 			}
 				
-			//std::reference_wrapper<TicTacToe>game = games.back(game);
-			ames.push_back(std::move(game));
+			
 			std::string first_player;
 			while (!(first_player == "X" || first_player == "O" || first_player == "x" || first_player == "o"))
 			{
@@ -57,26 +55,26 @@ int main()
 			}
 			do
 			{
-				try
-				{
+			
+					try
+					{
+				
+						cin >> *game;
+						cout << *game;
+						//winner = *game.get().game_over();
 
-					cin >> *game;
-					cout << *game;
-					//winner = *game.get().game_over();
+					}
+					catch (Error e)
+					{
+						cout << e.get_message() << endl;
+					}
 
-				}
-				catch (Error e)
-				{
-					cout << e.get_message() << endl;
-				}
+			}while(!(game->game_over()));//(winner == false);
 
-			}
-
-			while(!(game->game_over()));//(winner == false);
+			cout << "The winner is: " << game-> get_winner() << endl;
 			allGames->save_game(game);
 			allGames;
-			cout << "The winner is: " << game.get().get_winner() << endl;
-			cout << allGames << endl;
+			cout << *allGames << endl;
 			cout << "To continue press Y : " << endl;
 			cin >> choice;
 		}
