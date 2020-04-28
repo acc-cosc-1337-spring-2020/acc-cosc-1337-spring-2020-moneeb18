@@ -10,6 +10,8 @@ public:
 	Vector(size_t sz);
 	Vector(const Vector& v);
 	Vector& operator=(const Vector& v);
+	Vector(Vector&& v);
+	Vector&operator=(Vector&& v);
 	size_t Size()const { return size; }
 	int& operator[](int i) { return nums[i]; }
 	int& operator[](int i)const { return nums[i]; }
@@ -23,3 +25,5 @@ private:
 #endif //!1
 
 void use_vector();
+
+Vector get_vector();
