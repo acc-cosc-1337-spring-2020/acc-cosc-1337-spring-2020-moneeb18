@@ -10,7 +10,8 @@ int main()
 	int&& num_5 = 5;
 	int a = 1, b = 5, c;
 	c = a * b;//a*b is an rvalue*/
-	Vector v1 = get_vector();
+	Vector v1(3);
+	v1= get_vector();
 	return 0;
 }
 
