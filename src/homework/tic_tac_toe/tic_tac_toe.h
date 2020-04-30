@@ -21,6 +21,7 @@ public:
 	friend std::ostream& operator<<(std::ostream & out, const TicTacToe& game);
 	TicTacToe(int s):pegs(s*s," "){};
 	TicTacToe(std::vector<string>p, string win);
+	std::string get_pegs()const { return pegs{}; }
 private:
 	void set_next_player();
 	bool check_board_full();

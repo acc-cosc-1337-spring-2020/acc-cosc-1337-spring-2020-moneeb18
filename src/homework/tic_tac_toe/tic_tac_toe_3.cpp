@@ -26,6 +26,10 @@ Win by row if
 
 */
 
+TicTacToe3::TicTacToe3(std::vector<string> p, string winner)
+{
+}
+
 bool TicTacToe3::check_column_win()
 {
 	if (pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X")

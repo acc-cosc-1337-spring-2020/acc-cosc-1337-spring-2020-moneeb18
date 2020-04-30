@@ -62,6 +62,10 @@ void TicTacToe::mark_board(int position)
 
 
 
+TicTacToe::TicTacToe(std::vector<string> p, string win)
+{
+}
+
 void TicTacToe::set_next_player()
 {
 	if (player == "X")

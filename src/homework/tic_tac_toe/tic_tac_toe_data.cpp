@@ -1,1 +1,17 @@
+#include "tic_tac_toe_data.h"
+#include <fstream>
 //cpp
+
+void TicTacToeData::save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& games)
+{
+}
+
+std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
+{
+	return std::vector<std::unique_ptr<TicTacToe>>();
+}
+
+std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::boards()
+{
+	return std::vector<std::unique_ptr<TicTacToe>>();
+}
