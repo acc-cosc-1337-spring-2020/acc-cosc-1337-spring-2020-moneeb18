@@ -20,8 +20,8 @@ public:
 	friend std::istream& operator>>(std::istream & in, TicTacToe& game);
 	friend std::ostream& operator<<(std::ostream & out, const TicTacToe& game);
 	TicTacToe(int s):pegs(s*s," "){};
-	TicTacToe(std::vector<string>p, string win);
-	std::string get_pegs()const { return pegs{}; }
+	TicTacToe(std::vector<std::string>p, std::string win);
+	std::vector<std::string> get_pegs()const { return pegs; }
 private:
 	void set_next_player();
 	bool check_board_full();
@@ -29,7 +29,6 @@ private:
 	std::string player;
 	void set_winner();
 	std::string winner;
-
 protected:
 	std::vector<std::string>pegs{};
 	virtual bool check_column_win()=0;
