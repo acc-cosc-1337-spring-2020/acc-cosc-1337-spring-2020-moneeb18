@@ -4,6 +4,11 @@
 
 void TicTacToeData::save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& games)
 {
+	fstream MyFile("TicTacToe.txt");
+	for (auto something : games)
+	{
+		cout << get_winner();
+	}
 }
 
 std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
