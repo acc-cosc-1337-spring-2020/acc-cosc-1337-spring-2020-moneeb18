@@ -8,10 +8,13 @@ void TicTacToeData::save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& gam
 
 std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
+	fstream MyFile("TicTacToe.txt");
+
 	return std::vector<std::unique_ptr<TicTacToe>>();
 }
 
 std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::boards()
 {
+	fstream MyFile("TicTacToe.txt");
 	return std::vector<std::unique_ptr<TicTacToe>>();
 }

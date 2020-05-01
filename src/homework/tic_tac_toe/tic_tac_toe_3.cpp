@@ -26,7 +26,8 @@ Win by row if
 
 */
 
-TicTacToe3::TicTacToe3(std::vector<string> p, string winner)
+
+TicTacToe3::TicTacToe3(std::vector<std::string> p, std::string winner)
 {
 }
 
